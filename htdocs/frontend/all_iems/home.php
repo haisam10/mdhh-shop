@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +8,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=login" />
 </head>
 <body>
+    <!-- home page -->
     <header>
         <span class="txt-cn">
-            <?php include 'component/mini-header.php';?>
+            <?php include 'component/mini-header.php';?> 
         </span>
         <div>
             <?php include 'component/header.php';?>

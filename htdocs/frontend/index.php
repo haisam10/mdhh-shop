@@ -1,4 +1,4 @@
 <?php 
-require_once 'connect.php';
-require_once 'frontend/all_iems/home.php';
-require_once 'frontend/all_iems/css/style.php';
+include 'connect.php'; // Database connection
+include 'frontend/all_iems/home.php'; // Home page
+include 'frontend/all_iems/css/style.php'; // CSS styles
