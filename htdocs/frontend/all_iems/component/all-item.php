@@ -102,7 +102,7 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     <div class="d-flex card">
         <?php foreach ($products as $product): ?>
-            <div class="card-group animation-fading">
+            <div class="card-group animation">
                 <div class="card-image">
                     <?php if (!empty($product['item_image'])): ?>
                         <img src="frontend/all_iems/image/<?= htmlspecialchars($product['item_image']) ?>" alt="Product Image">
@@ -117,7 +117,17 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </div>
         <?php endforeach; ?>
     </div>
+<?php include 'frontend/all_iems/js/gsap.php'; ?>
+<script>
+    var tlm = gsap.timeline()
+    tlm.from("animation",{
+        duration: 1,
+        opacity: 0,
+        y: -30,
+        stagger:0.3
+    })
 
+</script>
 </body>
 
 </html>

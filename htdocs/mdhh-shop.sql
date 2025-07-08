@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 27, 2025 at 06:10 PM
+-- Generation Time: Jul 08, 2025 at 07:52 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -65,26 +65,8 @@ INSERT INTO `items` (`id`, `item_name`, `item_description`, `item_price`, `item_
 (25, 'Baby-cap-black', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it', 600.00, 'baby-cap-black.avif'),
 (26, 'baby-onesie-beige-1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it', 550.00, 'baby-onesie-beige-1.avif'),
 (27, 'bag-1-dark', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it', 100.00, 'bag-1-dark.avif'),
-(28, 'mug-1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it', 300.00, 'mug-1.avif');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `login-user`
---
-
-CREATE TABLE `login-user` (
-  `id` int(100) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `login-user`
---
-
-INSERT INTO `login-user` (`id`, `username`, `password`) VALUES
-(1, 'user', 'user');
+(28, 'mug-1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it', 300.00, 'mug-1.avif'),
+(31, 'green-shirt', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 500.00, 'green-shirt.jpg');
 
 --
 -- Indexes for dumped tables
@@ -103,12 +85,6 @@ ALTER TABLE `items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `login-user`
---
-ALTER TABLE `login-user`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -122,13 +98,7 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `items`
 --
 ALTER TABLE `items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
-
---
--- AUTO_INCREMENT for table `login-user`
---
-ALTER TABLE `login-user`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

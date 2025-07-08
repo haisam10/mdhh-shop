@@ -32,14 +32,14 @@
       z-index: 1;
     }
     header{
-      background-color: #333;
+      background-color: yellowgreen;
       color: white;
       padding: 10px;
     }
     nav{
       display: flex;
       gap: 20px;
-      background-color: #333;
+      background-color: #111;
       height: 100%;
       width: 100%;
       a{
@@ -48,7 +48,7 @@
         color: white;
         text-decoration: none;
         &:hover{
-          background-color: #444;
+          background-color: royalblue;
           color: white;
           text-decoration: underline;
           border-radius: 0px 50px 50px 0px;
@@ -61,7 +61,7 @@
   <?php include_once 'backend/asset/header.php'; ?>
 <div class="d-flex align-items-center slidebar">
   <div class="slidebar_dev">
-    <nav class="d-flex" style="flex-direction: column;">
+    <nav class="d-flex anim" style="flex-direction: column;">
         <a href="dashboard">Home</a>
       <a href="add-item">Add Item</a>
       <a href="view-item">View Items</a>

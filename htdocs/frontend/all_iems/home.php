@@ -21,10 +21,14 @@
         <?php include 'component/hero-area.php';?>
     </div>
     <div>
+        <?php include 'component/bigtitle.php';?>
+    </div>
+    <div>
         <?php include 'component/image-carosol.php';?>
     </div>
     <footer>
         <?php include 'component/footer.php';?>
     </footer>
+    
 </body>
 </html>

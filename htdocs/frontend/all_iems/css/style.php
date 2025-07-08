@@ -53,6 +53,7 @@ body{
     font-family:Arial, Helvetica, sans-serif;
     background-color: var(--main-color);
     color: var(--font-color);
+    /* overflow-x: hidden; */
 }
 .mini-header{
     background-color: var(--second-color);
@@ -187,6 +188,7 @@ body{
         }
 }
 #carousel-images{
+    padding: 50px 0;
     div {
         margin: 4px 21px;
         padding: 4px 24px;
@@ -244,51 +246,5 @@ body{
     background-color: var(--fifth-color);
     color: var(--font-color);
     border-top: 1px solid var(--fourth-color);
-}
-@keyframes left {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-@keyframes right {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes fading {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-@keyframes bottom {
-    from {
-        transform: translateY(100%);
-    }
-    to {
-        transform: translateY(0%);
-    }
-    
-}
-.animation-left{
-    animation: left 1s ease-in-out;
-}
-.animation-right{
-    animation: right 1s ease-in-out;
-}
-.animation-fading{
-    animation: fading 1s ease-in-out;
-}
-.animation-bottom{
-    animation: bottom 1s ease-in-out;
 }
 </style>

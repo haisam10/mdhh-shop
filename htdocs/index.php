@@ -13,12 +13,12 @@ $routes = [
   'item' => 'frontend/all_iems/all_item.php',
   'admin' => 'backend/login.php',
   'login' => 'frontend/all_iems/login.php',
-  'dashboard' => 'backend/index.php',
+  'admin/dashboard' => 'backend/index.php',
   'image' => 'frontend/all_iems/image.php',
-  'add-item' => 'backend/asset/add-item.php',
-  'view-item' => 'backend/asset/view-item.php',
-  'delete-item' => 'backend/asset/delete.php',
-  'update-item' => 'backend/asset/update.php',
+  'admin/add-item' => 'backend/asset/add-item.php',
+  'admin/view-item' => 'backend/asset/view-item.php',
+  'admin/delete-item' => 'backend/asset/delete.php',
+  'admin/update-item' => 'backend/asset/update.php',
 ];
 
 // Check if the first segment is a route
@@ -34,3 +34,10 @@ if (array_key_exists($segments[0], $routes)) {
 else {
   require 'frontend/all_iems/404.php';
 }
+
+// .htaccess file
+
+// RewriteEngine On
+// RewriteCond %{REQUEST_FILENAME} !-f
+// RewriteCond %{REQUEST_FILENAME} !-d
+// RewriteRule ^(.*)$ index.php [QSA,L]

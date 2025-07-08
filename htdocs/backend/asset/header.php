@@ -11,9 +11,12 @@
       color: white;
       padding: 10px;
       text-align: center;
+      h3{
+        color: #111;
+      }
     }
     #btn{
-      background-color: #007BFF;
+      background-color: #111;
       color: white;
       border: none;
       padding: 10px 20px;

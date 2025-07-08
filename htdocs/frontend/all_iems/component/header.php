@@ -14,3 +14,14 @@
     <a href="/login"><span class="material-symbols-outlined">login</span></a>
     </div>
 </div>
+<?php include 'frontend/all_iems/js/gsap.php'; ?>
+<script>
+    var tl = gsap.timeline()
+    tl.from("header div",{
+        duration: 1,
+        opacity: 0,
+        y: -30,
+        stagger:0.3
+    })
+
+</script>
