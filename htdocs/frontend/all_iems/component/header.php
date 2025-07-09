@@ -7,7 +7,7 @@
         <ul class="d-flex a-i-cn">
             <a href="/"><li>Home</li></a>
             <a href="/item"><li>Item</li></a>
-            <a href=""><li>About</li></a>
+            <a href="/about"><li>About</li></a>
         </ul>
     </div>
     <div>

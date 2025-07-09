@@ -11,23 +11,26 @@
     <!-- home page -->
     <header>
         <span class="txt-cn">
-            <?php include 'component/mini-header.php';?> 
+            <?php include 'frontend/all_iems/component/mini-header.php';?> 
         </span>
         <div>
-            <?php include 'component/header.php';?>
+            <?php include 'frontend/all_iems/component/header.php';?>
         </div>
     </header>
     <div>
-        <?php include 'component/hero-area.php';?>
+        <?php include 'frontend/all_iems/component/hero-area.php';?>
     </div>
     <div>
         <?php include 'component/bigtitle.php';?>
     </div>
     <div>
+        <?php include 'component/subscribe-page.php';?>
+    </div>
+    <div>
         <?php include 'component/image-carosol.php';?>
     </div>
     <footer>
-        <?php include 'component/footer.php';?>
+        <?php include 'frontend/all_iems/component/footer.php';?>
     </footer>
     
 </body>

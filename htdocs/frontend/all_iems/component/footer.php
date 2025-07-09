@@ -6,10 +6,16 @@
                 <p>MDHH Shop</p>
             </div>
             <div class="footer-links d-flex fx-d-col">
-                <a href="#">About Us</a>
-                <a href="#">Contact Us</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+                <a href="/about">About Us</a>
+                <a href="/contact">Contact Us</a>
+                <a href="/privacy-policy">Privacy Policy</a>
+                <a href="/terms-of-service">Terms of Service</a>
+            </div>
+            <div class="footer-links d-flex fx-d-col">
+                <a href="/refund-policy">Refund Policy</a>
+                <a href="/developer-team">Developer Team</a>
+                <a href="/shipping-policy">Shipping Policy</a>
+                <a href="/faq-page">FAQ Page</a>
             </div>
         </div>
         <div class="footer-bottom">

@@ -10,5 +10,5 @@ if(mysqli_connect_error()){
 // }
 
 // Fetch all items from the database
-$sql = "SELECT * FROM product";
+// $sql = "SELECT * FROM product";
 // $result = $conn->query($sql);
