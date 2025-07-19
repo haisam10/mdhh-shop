@@ -10,6 +10,8 @@
 </head>
 
 <body>
+      <!-- Cursor for hover effect -->
+     <?php include 'frontend/all_iems/component/cursor.php'; ?>
     <header>
         <span class="txt-cn">
             <?php include 'frontend/all_iems/component/mini-header.php'; ?>
@@ -31,7 +33,7 @@
       <h3 style="color: #1c64f2;">Afinur Binte Aziz Arshi</h3>
       <p>Lead Developer & UI/UX Designer</p>
       <a href="mailto:afinurazizarshi@gmail.com" style="color: #1c64f2;">afinurazizarshi@gmail.com</a><br>
-      <a href="https://dev-haisam-resume.pantheonsite.io/" target="_blank" style="color: #1c64f2;">Portfolio</a>
+      <a href="" target="_blank" style="color: #1c64f2;">Portfolio</a>
     </div>
 
     <!-- Developer 2 -->
@@ -40,7 +42,7 @@
       <h3 style="color: #1c64f2;">Md Haisam Hoque</h3>
       <p>Backend Engineer</p>
       <a href="mailto:mdhh.info@gmail.com" style="color: #1c64f2;">mdhh.info@gmail.com</a><br>
-      <a href="https://dev-haisam-resume.pantheonsite.io/" target="_blank" style="color: #1c64f2;">Portfolio</a>
+      <a href="https://haisam10.github.io/freelancer/" target="_blank" style="color: #1c64f2;">Portfolio</a>
     </div>
   </div>
 

@@ -1,36 +1,37 @@
 <?php
-require_once 'backend/connect.php'; // Ensure this file contains the $conn initialization.
+require_once 'backend/connect.php';
+
+// Initialize variables safely
 $name = $_POST['item_name'] ?? '';
 $description = $_POST['item_description'] ?? '';
 $price = $_POST['item_price'] ?? '';
+
 $image_name = $_FILES['item_image']['name'] ?? '';
 $image_tmp = $_FILES['item_image']['tmp_name'] ?? '';
-$image_name = isset($_FILES['item_image']['name']) ? $_FILES['item_image']['name'] : '';
-$image_tmp = isset($_FILES['item_image']['tmp_name']) ? $_FILES['item_image']['tmp_name'] : '';
 
-$upload_dir = 'images/';
+$upload_dir = 'frontend/all_iems/image/';
 if (!is_dir($upload_dir)) {
     mkdir($upload_dir, 0777, true);
 }
+
 $upload_path = $upload_dir . basename($image_name);
 
-if (move_uploaded_file($image_tmp, $upload_path)) {
-    $stmt = $conn->prepare("INSERT INTO items (item_name, item_description, item_price, item_image) VALUES (?, ?, ?, ?)");
-    $stmt->bind_param("ssds", $name, $description, $price, $image_name);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (move_uploaded_file($image_tmp, $upload_path)) {
+        $stmt = $conn->prepare("INSERT INTO items (item_name, item_description, item_price, item_image) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("ssds", $name, $description, $price, $image_name);
 
-    if ($stmt->execute()) {
-        echo '<script>alert("item add successfully")</script>';
-        echo '<script>window.location.href = "/add-item";</script>';
-        exit();
+        if ($stmt->execute()) {
+            echo '<script>alert("Item added successfully")</script>';
+            // echo '<script>window.location.href = "admin/dashboard";</script>';
+            $stmt->close();
+        } else {
+            echo "Database error: {$stmt->error}";
+        }
     } else {
-        echo "Database error: {$stmt->error}";
+        echo "Image upload failed.";
     }
-    $stmt->close();
-} 
-// else {
-//     echo "Image upload failed.";
-// }
-
+}
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +56,6 @@ if (move_uploaded_file($image_tmp, $upload_path)) {
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            /* max-width: 400px; */
             margin: auto;
         }
 
@@ -93,25 +93,25 @@ if (move_uploaded_file($image_tmp, $upload_path)) {
     <?php include_once 'backend/asset/header.php'; ?>
     <div class="d-flex">
         <?php include_once 'backend/asset/slidebar.php'; ?>
-        <h2>Add New Item</h2>
-        <form method="post" enctype="multipart/form-data">
-            <label>Item Name:</label>
-            <input type="text" name="item_name" required>
+        <div style="padding: 20px; width: 100%;">
+            <h2>Add New Item</h2>
+            <form method="post" enctype="multipart/form-data">
+                <label>Item Name:</label>
+                <input type="text" name="item_name" required>
 
-            <label>Description:</label>
-            <textarea name="item_description" required></textarea>
+                <label>Description:</label>
+                <textarea name="item_description" required></textarea>
 
-            <label>Price:</label>
-            <input type="number" step="0.01" name="item_price" required>
+                <label>Price:</label>
+                <input type="number" step="0.01" name="item_price" required>
 
-            <label>Image:</label>
-            <input type="file" name="item_image" accept="image/*" required>
+                <label>Image:</label>
+                <input type="file" name="item_image" accept="frontend/all_iems/image/*" required>
 
-            <button type="submit">Add Item</button>
-        </form>
+                <button type="submit">Add Item</button>
+            </form>
+        </div>
     </div>
-
-
 </body>
 
 </html>

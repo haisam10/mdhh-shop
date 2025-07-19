@@ -128,7 +128,7 @@ $conn->close();
     <?php if($loginSuccess): ?>
         <script>
             alert("Login Done");
-            window.location.href = 'dashboard'; // Redirect to the dashboard
+            window.location.href = 'admin/dashboard'; // Redirect to the dashboard
         </script>
     <?php endif; ?>
     </div>

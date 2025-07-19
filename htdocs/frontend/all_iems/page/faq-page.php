@@ -10,6 +10,8 @@
 </head>
 
 <body>
+        <!-- Cursor for hover effect -->
+     <?php include 'frontend/all_iems/component/cursor.php'; ?>
     <header>
         <span class="txt-cn">
             <?php include 'frontend/all_iems/component/mini-header.php'; ?>

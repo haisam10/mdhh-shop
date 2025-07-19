@@ -33,7 +33,7 @@
             trigger:".big-title h2",
             scroller:"body",
             start:"top 0%",
-            end:"top -200%",
+            end:"top -205%",
             scrub:5,
             pin:true
         }

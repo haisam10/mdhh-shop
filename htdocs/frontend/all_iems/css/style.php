@@ -60,6 +60,7 @@ body{
     color: var(--font-color);
     padding: 5px;
     margin: 0;
+    text-align: center;
 }
 .header{
     margin: 1% 0% auto;

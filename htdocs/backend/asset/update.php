@@ -1,107 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Item</title>
-    <style>
-         input, textarea {
-            width: 90%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        form {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            margin: auto;
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-    </style>
-</head>
-<body>
-    <?php include_once 'backend/asset/header.php'; ?>
-    <div class="d-flex">
-    <?php include_once 'backend/asset/slidebar.php'; ?>
-            <main>
-            <h1>Update Item</h1>
-            <?php 
-            // Get item ID from URL
-$item_id = $_GET['id'] ?? null;
+<?php
+session_start();
+require_once 'backend/connect.php'; // db config
 
-// If form submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = $_POST['item_name'];
-    $desc = $_POST['item_description'];
-    $price = $_POST['item_price'];
-    $image = $_POST['item_image'];
+// ✅ Check if ID is passed
+if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+    die("Invalid Item ID");
+}
 
-    $stmt = $conn->prepare("UPDATE items SET item_name=?, item_description=?, item_price=?, item_image=? WHERE id=?");
-    $stmt->bind_param("ssdsi", $name, $desc, $price, $image, $item_id);
+$item_id = intval($_GET['id']);
 
-    if ($stmt->execute()) {
-        echo "✅ Item updated successfully.";
+// ✅ Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["name"];
+    $description = $_POST["description"];
+    $price = $_POST["price"];
+
+    // If new image uploaded
+    if (!empty($_FILES["image"]["name"])) {
+        $targetDir = "../../frontend/all_iems/uploads/";
+        $imageName = basename($_FILES["image"]["name"]);
+        $targetFilePath = $targetDir . $imageName;
+
+        move_uploaded_file($_FILES["image"]["tmp_name"], $targetFilePath);
+
+        // ✅ Update with image
+        $stmt = $conn->prepare("UPDATE items SET name=?, description=?, price=?, image=? WHERE id=?");
+        $stmt->bind_param("ssdsi", $name, $description, $price, $imageName, $item_id);
     } else {
-        echo "❌ Update failed: " . $conn->error;
+        // ✅ Update without changing image
+        $stmt = $conn->prepare("UPDATE items SET name=?, description=?, price=? WHERE id=?");
+        $stmt->bind_param("ssdi", $name, $description, $price, $item_id);
     }
 
-    $stmt->close();
+    if ($stmt->execute()) {
+        header("Location: /admin/view-item");
+        exit;
+    } else {
+        echo "Update failed!";
+    }
 }
 
-// Fetch current data
-$item = null;
-if ($item_id) {
-    $stmt = $conn->prepare("SELECT * FROM items WHERE id = ?");
-    $stmt->bind_param("i", $item_id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $item = $result->fetch_assoc();
-    $stmt->close();
+// ✅ Fetch existing data
+$stmt = $conn->prepare("SELECT * FROM items WHERE id = ?");
+$stmt->bind_param("i", $item_id);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows == 0) {
+    die("Item not found!");
 }
 
-if (!$item) {
-    echo "❌ Item not found.";
-    exit;
-}
+$item = $result->fetch_assoc();
 ?>
 
-    <h2 style="text-align:center;">Update Item (ID: <?= htmlspecialchars($item_id) ?>)</h2>
-    <form method="post">
-        <label>Item Name:</label>
-        <input type="text" name="item_name" value="<?= htmlspecialchars($item['item_name']) ?>" required>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Item</title>
+</head>
+<body>
+    <h2>Update Item</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Name:</label><br>
+        <input type="text" name="name" value="<?= htmlspecialchars($item['name']) ?>" required><br><br>
 
-        <label>Description:</label>
-        <textarea name="item_description" rows="5" required><?= htmlspecialchars($item['item_description']) ?></textarea>
+        <label>Description:</label><br>
+        <textarea name="description" required><?= htmlspecialchars($item['description']) ?></textarea><br><br>
 
-        <label>Price:</label>
-        <input type="number" name="item_price" step="0.01" value="<?= htmlspecialchars($item['item_price']) ?>" required>
+        <label>Price:</label><br>
+        <input type="number" name="price" step="0.01" value="<?= $item['price'] ?>" required><br><br>
 
-        <label>Image Filename (e.g. mug-1.avif):</label>
-        <input type="text" name="item_image" value="<?= htmlspecialchars($item['item_image']) ?>" required>
+        <label>Image:</label><br>
+        <img src="/frontend/all_iems/uploads/<?= $item['image'] ?>" width="100"><br>
+        <input type="file" name="image"><br><br>
 
-        <input type="submit" value="Update Item">
+        <button type="submit">Update</button>
     </form>
-            <!-- <form method="post" enctype="multipart/form-data">
-                <label>Item Name:</label>
-                <input type="text" name="item_name" required>
-                <label>Item Description:</label>
-                <textarea name="item_description" required></textarea>
-                <label>Item Price:</label>
-                <input type="number" name="item_price" required>
-                <button type="submit">Update Item</button>
-            </form> -->
-        </main>
-    </div>
 </body>
 </html>

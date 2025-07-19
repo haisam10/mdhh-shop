@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=login" />
 </head>
 <body>
+        <!-- Cursor for hover effect -->
+     <?php include 'frontend/all_iems/component/cursor.php'; ?>
     <!-- item page -->
     <header>
         <span class="txt-cn">
