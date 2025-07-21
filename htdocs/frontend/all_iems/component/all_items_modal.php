@@ -63,7 +63,6 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
             padding: 15px;
             box-shadow: 0 0 12px transparent;
             cursor: pointer;
-            transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1) 0.25s, box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
             color: #ddd;
             position: relative;
             overflow: visible;
@@ -84,54 +83,11 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
 
         .card:hover {
+            box-shadow: 0 0 10px #ffffff;
+            transition: all 0.3s ease-in-out;
             transform: scale(1.05);
         }
 
-        .card:hover::before {
-            animation: rotateBoxShadow 2.5s linear infinite;
-        }
-
-        @keyframes rotateBoxShadow {
-            0% {
-                box-shadow:
-                    0 0 18px 0 #ff2288,
-                    0 0 18px 0 #387ef0;
-            }
-
-            25% {
-                box-shadow:
-                    12px 12px 24px 0 #ff2288,
-                    -12px -12px 24px 0 #387ef0;
-            }
-
-            50% {
-                box-shadow:
-                    0 0 18px 0 #387ef0,
-                    0 0 18px 0 #ff2288;
-            }
-
-            75% {
-                box-shadow:
-                    -12px 12px 24px 0 #387ef0,
-                    12px -12px 24px 0 #ff2288;
-            }
-
-            100% {
-                box-shadow:
-                    0 0 18px 0 #ff2288,
-                    0 0 18px 0 #387ef0;
-            }
-        }
-
-        @keyframes rotation_9018 {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
 
         .card img {
             width: 100%;
@@ -447,11 +403,6 @@ $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
         });
     </script>
     <?php include 'frontend/all_iems/js/magnify.php'; ?>
-    <script>
-        /* Initiate Magnify Function
-with the id of the image, and the strength of the magnifier glass:*/
-        magnify("modalImage", 2);
-    </script>
 </body>
 
 </html>

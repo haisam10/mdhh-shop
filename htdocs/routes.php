@@ -20,6 +20,7 @@ $routes = [
     'developer-team' => 'frontend/all_iems/page/developer-team.php',
     'shipping-policy' => 'frontend/all_iems/page/shipping-policy.php',
     'faq-page' => 'frontend/all_iems/page/faq-page.php',
+    'checkout' => 'frontend/all_iems/page/checkout.php',
     
     'admin' => 'backend/login.php',
     'admin/dashboard' => 'backend/index.php',
