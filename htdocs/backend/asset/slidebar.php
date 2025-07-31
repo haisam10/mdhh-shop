@@ -27,7 +27,7 @@
     .slidebar_dev{
       background-color: #f4f4f9;
       width: 200px;
-      height: 100vh;
+      height: 100%;
       gap: 20px;
       z-index: 1;
     }
@@ -59,14 +59,14 @@
 </head>
 <body>
   <?php include_once 'backend/asset/header.php'; ?>
-<div class="d-flex align-items-center slidebar">
+<div class="d-flex slidebar">
   <div class="slidebar_dev">
     <nav class="d-flex anim" style="flex-direction: column;">
         <a href="dashboard">Home</a>
       <a href="add-item">Add Item</a>
       <a href="view-item">View Items</a>
-      <a href="update-item">Update Item</a>
-      <a href="delete-item">Delete Item</a>
+      <a href="order-list">Order list</a>
+      <a href="order-processing">Order Processing</a>
       <a href="/">Logout</a>
 </div>
   <main>

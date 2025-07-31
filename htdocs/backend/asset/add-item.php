@@ -51,12 +51,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             color: #333;
         }
 
-        form {
-            background: #fff;
+        .add-item-form {
+            background: linear-gradient(180deg, #DCF9E0 0%, #FFFFFF 30.21%);
+            box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin: auto;
+            margin: 0 auto;
+            width: 30%;
         }
 
         label {
@@ -86,16 +88,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         button:hover {
             background-color: #0056b3;
         }
+
     </style>
 </head>
 
 <body>
+    
     <?php include_once 'backend/asset/header.php'; ?>
     <div class="d-flex">
         <?php include_once 'backend/asset/slidebar.php'; ?>
         <div style="padding: 20px; width: 100%;">
-            <h2>Add New Item</h2>
-            <form method="post" enctype="multipart/form-data">
+            <h2 style="text-align:center;">➕📦 নতুন আইটেম যোগ করুন</h2>
+            <form method="post" enctype="multipart/form-data" class="add-item-form">
                 <label>Item Name:</label>
                 <input type="text" name="item_name" required>
 
