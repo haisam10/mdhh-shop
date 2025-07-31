@@ -29,7 +29,7 @@
     
     <!-- Developer 1 -->
     <div style="border: 1px solid #ddd; border-radius: 10px; padding: 20px;">
-      <img src="https://scontent.fdac110-1.fna.fbcdn.net/v/t39.30808-6/487503743_1883127399150249_4285897661792562482_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=C2zHaHDfzJ0Q7kNvwEbk-en&_nc_oc=AdkBAp8FvQB84oXiTreRiPdb1x-B-VvhN2sfHTa9qU0gQpX0VcMLJ_ibG-KR6Srzx_Y&_nc_zt=23&_nc_ht=scontent.fdac110-1.fna&_nc_gid=CdxmRbAdskkfthQR3bJ8_Q&oh=00_AfRMb4r9np71GUgDip7BH65gcBDYTiwDqJSCCjooFBqjuw&oe=687448C8" alt="" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+      <img src="https://avatars.githubusercontent.com/u/129544919?v=4" alt="" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
       <h3 style="color: #1c64f2;">Afinur Binte Aziz Arshi</h3>
       <p>Lead Developer & UI/UX Designer</p>
       <a href="mailto:afinurazizarshi@gmail.com" style="color: #1c64f2;">afinurazizarshi@gmail.com</a><br>
@@ -38,7 +38,7 @@
 
     <!-- Developer 2 -->
     <div style="border: 1px solid #ddd; border-radius: 10px; padding: 20px;">
-      <img src="https://scontent.fdac110-1.fna.fbcdn.net/v/t39.30808-6/461530078_122182183946088391_266647946652574429_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=_VMpw6lNATcQ7kNvwGw1bnw&_nc_oc=Adn-LpWeWW-jBRkhJhv5SOkaLJzmO_jAfljBqNDIdn8gGI3Lw5L2JJmfx5tbO6y7fVQ&_nc_zt=23&_nc_ht=scontent.fdac110-1.fna&_nc_gid=mzNeWyPe6zMlAcaT3epzZQ&oh=00_AfQg7hF7rqniNjFCpD1e-NK5uEnK4KpO-VSMfyvdh87Xmw&oe=68746E01" alt="Md Haisam Hoque" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+      <img src="https://avatars.githubusercontent.com/u/122108214?v=4" alt="Md Haisam Hoque" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
       <h3 style="color: #1c64f2;">Md Haisam Hoque</h3>
       <p>Backend Engineer</p>
       <a href="mailto:mdhh.info@gmail.com" style="color: #1c64f2;">mdhh.info@gmail.com</a><br>

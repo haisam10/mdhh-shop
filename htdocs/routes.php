@@ -22,16 +22,17 @@ $routes = [
     'faq-page' => 'frontend/all_iems/page/faq-page.php',
     'checkout' => 'frontend/all_iems/page/checkout.php',
     
+    
     'admin' => 'backend/login.php',
     'admin/dashboard' => 'backend/index.php',
     'admin/add-item' => 'backend/asset/add-item.php',
     'admin/view-item' => 'backend/asset/view-item.php',
-    'admin/delete-item' => 'backend/asset/delete.php',
-    'admin/update-item' => 'backend/asset/update.php',
+    'admin/order-list' => 'backend/asset/order-list.php',
+    'admin/order-processing' => 'backend/asset/order-processing.php',
     'image' => 'frontend/all_iems/image.php',
 ];
 
-// দুইটি সেগমেন্ট একত্রে তৈরি করুন
+// রুট চেক
 $routeKey = $segments[0] ?? '';
 $twoSegments = isset($segments[1]) ? $segments[0] . '/' . $segments[1] : null;
 

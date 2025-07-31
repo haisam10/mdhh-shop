@@ -1,5 +1,6 @@
 <?php
-// Connect to the database
+// Connect to the database 
+// page name : backend/connect.php
 
 $conn = mysqli_connect('localhost','root','','mdhh-shop');
 if(mysqli_connect_error()){

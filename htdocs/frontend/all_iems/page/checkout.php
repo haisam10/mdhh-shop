@@ -34,7 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Clear session cart
         unset($_SESSION['cart']);
-        echo "<p style='text-align:center; color:green;'>✅ অর্ডার সফলভাবে সম্পন্ন হয়েছে!</p>";
+        echo "<script>
+        localStorage.removeItem('cart');
+        alert('✅ অর্ডার সফলভাবে সম্পন্ন হয়েছে!');
+        window.location.href = './'; // অথবা যেকোনো ধন্যবাদ পেজ
+    </script>";
         exit;
     } else {
         echo "<p style='text-align:center; color:red;'>⚠️ সমস্ত তথ্য পূরণ করুন।</p>";
@@ -62,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             background-color: #222;
             padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 0 10px #b56aff;
+            box-shadow: 0 0 10px royalblue;
             top: 25px;
         }
 
@@ -176,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   color: #fff;
   background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #868686 20%);
   background-position: 0;
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 3s infinite linear;
   animation-fill-mode: forwards;
@@ -279,7 +283,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <?php include 'frontend/all_iems/component/mini-header.php'; ?>
     <?php include 'frontend/all_iems/component/header.php'; ?>
-    <form method="POST">
+    <form method="POST" onsubmit="disableButton()">
         <h2>📦 Checkout Form</h2>
         <!-- From Uiverse.io by neerajbaniwal --> 
 <a href="#" class="btn-shine">📦 Checkout Form<</a>
@@ -296,7 +300,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="nebula-particle" style="--x:0.6; --y:0.4; --delay:0.6s"></div>
         </div>
         <div class="nebula-input">
-            <input required="" type="text" name="phone" autocomplete="off" class="input" />
+            <input required="" type="number" name="phone" autocomplete="off" class="input" />
             <label class="user-label">📞 মোবাইল নম্বর:</label>
             <div class="nebula-particle" style="--x:0.2; --y:-0.4; --delay:0.1s"></div>
             <div class="nebula-particle" style="--x:0.5; --y:-0.2; --delay:0.3s"></div>
@@ -326,5 +330,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
     <?php include 'frontend/all_iems/component/footer.php'; ?>
 </body>
+<script>
+    function disableButton() {
+        document.querySelector('.btn').disabled = true;
+        document.querySelector('.btn').innerText = "⏳ Processing...";
+    }
+</script>
 
 </html>

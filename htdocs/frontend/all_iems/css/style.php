@@ -6,6 +6,7 @@
     --fourth-color: #26262c!important;
     --fifth-color: #1d1d1d!important;
 }
+
 /* Dispalay */
 .d-flex{    display: flex!important;          }  
 .d-block{   display: block!important;         }
@@ -28,7 +29,6 @@
 .a-i-cn{    align-items: center!important;              }
 .a-i-sb{    align-items: space-between!important;       }
 .a-i-sl{    align-items: space-around!important;        }
-/* Align Content */
 
 /* Text Align */
 .txt-cn{    text-align: center!important;               }     
