@@ -1,5 +1,5 @@
 
-# MDHH shop
+# MDHH shop (eCommerce webpage)
 ```
   ========== Developer Team ==========
 Name: MD haisam hoque
