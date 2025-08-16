@@ -25,14 +25,14 @@
 ---
 ## ৩. কীভাবে ইন্সটল ও রান করবেন  
 
-১. **রিপোজিটরি ক্লোন করুন**  
+- **রিপোজিটরি ক্লোন করুন** 
 ```bash
 git clone https://github.com/haisam10/mdhh-shop.git
 ```
-২. xampp এর (Appachi ও sql) start দিন 
-৩. xampp এর ``htdocs`` ফোল্ডারের ভিতর সব কোড pest করুন 
-৪. ``mdhh-htaccess.txt`` ফাইলটি rename করে  ``.htaccess ``রাখুন। 
-৫. phpmyadmin এ যান ডাটাবেস ইম্পোর্ট করুন। 
+- **xampp এর (Appachi ও sql) start দিন** 
+- **xampp এর ``htdocs`` ফোল্ডারের ভিতর সব কোড pest করুন** 
+- **``mdhh-htaccess.txt`` ফাইলটি rename করে  ``.htaccess ``রাখুন।** 
+- **phpmyadmin এ যান ডাটাবেস ইম্পোর্ট করুন।**
 
 ```
   ========== Developer Team ==========
@@ -45,6 +45,7 @@ Email: mdhh.info@gmail.com
 LinkedIn: https://www.linkedin.com/in/haisam-undefined-544421377/
 webpage: https://haisam10.github.io/freelancer/
 ```
+
 
 
 
