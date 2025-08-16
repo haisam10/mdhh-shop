@@ -34,3 +34,16 @@ git clone https://github.com/haisam10/mdhh-shop.git
 ৪. ``mdhh-htaccess.txt`` ফাইলটি rename করে  ``.htaccess ``রাখুন। 
 ৫. phpmyadmin এ যান ডাটাবেস ইম্পোর্ট করুন। 
 
+```
+  ========== Developer Team ==========
+Name: MD haisam hoque
+Position: Software Developer
+Bio: Software Developer with 3+ years of experience in web development.
+Location: Dhaka, Bangladesh
+Contact: +880 15371-61735
+Email: mdhh.info@gmail.com
+LinkedIn: https://www.linkedin.com/in/haisam-undefined-544421377/
+webpage: [http://dev-haisam-resume.pantheonsite.io/](https://haisam10.github.io/freelancer/)
+```
+
+
