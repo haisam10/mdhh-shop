@@ -8,7 +8,7 @@
 ## ১. প্রোজেক্টে কী আছে  
 
 - **PHP ফাইল** → ওয়েবসাইটের লজিক চালানোর জন্য (index.php, cart.php, checkout.php ইত্যাদি)  
-- **mdhh-shop.sql** → ডাটাবেজ সেটআপ (import করতে হবে phpmyadmin এ)   
+- **mdhh-shop.sql** → ডাটাবেজ সেটআপ    
 - **css/** → ওয়েবসাইটের ডিজাইন/স্টাইল  
 - **js/** → জাভাস্ক্রিপ্ট কোড  
 - **images/** → ছবি ও স্ক্রিনশট
@@ -33,3 +33,4 @@ git clone https://github.com/haisam10/mdhh-shop.git
 ৩. xampp এর ``htdocs`` ফোল্ডারের ভিতর সব কোড pest করুন 
 ৪. ``mdhh-htaccess.txt`` ফাইলটি rename করে  ``.htaccess ``রাখুন। 
 ৫. phpmyadmin এ যান ডাটাবেস ইম্পোর্ট করুন। 
+
